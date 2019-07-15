@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-project-info-reports-plugin
 Version  : 2.9
-Release  : 1
+Release  : 2
 URL      : https://github.com/apache/maven-project-info-reports-plugin/archive/maven-project-info-reports-plugin-2.9.tar.gz
 Source0  : https://github.com/apache/maven-project-info-reports-plugin/archive/maven-project-info-reports-plugin-2.9.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9/maven-project-info-reports-plugin-2.9.jar
@@ -12,15 +12,35 @@ Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-p
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: mvn-maven-project-info-reports-plugin-data = %{version}-%{release}
 
 %description
 No detailed description available
+
+%package data
+Summary: data components for the mvn-maven-project-info-reports-plugin package.
+Group: Data
+
+%description data
+data components for the mvn-maven-project-info-reports-plugin package.
+
 
 %prep
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9
+
 
 %files
 %defattr(-,root,root,-)
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9/maven-project-info-reports-plugin-2.9.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9/maven-project-info-reports-plugin-2.9.pom
