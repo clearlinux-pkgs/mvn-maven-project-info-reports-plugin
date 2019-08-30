@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-project-info-reports-plugin
 Version  : 2.9
-Release  : 2
+Release  : 3
 URL      : https://github.com/apache/maven-project-info-reports-plugin/archive/maven-project-info-reports-plugin-2.9.tar.gz
 Source0  : https://github.com/apache/maven-project-info-reports-plugin/archive/maven-project-info-reports-plugin-2.9.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-project-info-reports-plugin/2.9/maven-project-info-reports-plugin-2.9.jar
